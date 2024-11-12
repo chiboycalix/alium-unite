@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import HomePage from './pages/HomePage';
+import AddUserPage from './pages/AddUserPage';
+import ManageUsersPage from './pages/ManageUsersPage';
+import { UserProvider } from './context/UserContext';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <div className="min-h-screen bg-gray-100">
+        <Navigation />
+        <Toaster position="top-right" />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/add-user" element={<AddUserPage />} />
+            <Route path="/manage-users" element={<ManageUsersPage />} />
+          </Routes>
+        </main>
+      </div>
+    </UserProvider>
   );
 }
 

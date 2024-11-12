@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "profilePhoto": "https://ui-avatars.com/api/?name=John+Doe&background=random",
+    "status": "Active",
+    "role": "Admin"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "profilePhoto": "https://ui-avatars.com/api/?name=Jane+Smith&background=random",
+    "status": "Inactive",
+    "role": "Guest"
+  }
+]
